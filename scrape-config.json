@@ -36,5 +36,16 @@
     "image": "(?is)<img\\b[^>]*src=[\"']([^\"']+)[\"']",
     "title": "(?is)<strong[^>]*>(.*?)</strong>",
     "price": "(?is)<span[^>]*>(.*?)</span>"
+  },
+  "records": {
+    "tabsList": "(?is)<ul\\b[^>]*class=[\"'][^\"']*tabs__list[^\"']*[\"'][^>]*>(.*?)</ul>",
+    "tabTitle": "(?is)<span[^>]*>(.*?)</span>",
+    "tabsContentMarker": "(?is)<div\\b(?=[^>]*class=[\"'][^\"']*tabs__content[^\"']*[\"'])[^>]*>",
+    "paragraph": "(?is)<p\\b[^>]*>(.*?)</p>"
+  },
+  "partners": {
+    "listDivMarker": "(?is)<div\\b(?=[^>]*class=[\"'][^\"']*partners__list[^\"']*[\"'])[^>]*>",
+    "link": "(?is)<a\\b[^>]*href=[\"']([^\"']+)[\"'][^>]*>(.*?)</a>",
+    "image": "(?is)<img\\b[^>]*src=[\"']([^\"']+)[\"']"
   }
 }

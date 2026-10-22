@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "home": {
+    "descriptionMeta": "(?is)<meta\\s+name=[\"']description[\"']\\s+content=[\"'](.*?)[\"']"
+  },
+  "article": {
+    "articleTag": "(?is)<article\\b[^>]*>(.*?)</article>",
+    "bodyDivMarker": "(?is)<div\\b(?=[^>]*itemprop=[\"']articleBody[\"'])[^>]*>"
+  },
+  "news": {
+    "articleLink": "(?is)<a\\s+href=\"/([^\"#?]+)\"[^>]*>(.*?)</a>",
+    "image": "(?is)<img[^>]+src=[\"']([^\"']*/img/500/[^\"']+)[\"']",
+    "title": "(?is)<strong[^>]*>(.*?)</strong>",
+    "date": "(?is)<span[^>]*>\\s*(\\d{2}\\.\\d{2}\\.\\d{4})"
+  },
+  "training": {
+    "table": "(?is)<table\\b[^>]*class=[\"'][^\"']*training-schedule__info[^\"']*[\"'][^>]*>(.*?)</table>",
+    "row": "(?is)<tr\\b[^>]*>(.*?)</tr>",
+    "cell": "(?is)<td\\b[^>]*>(.*?)</td>",
+    "firstParagraph": "(?is)<p\\b[^>]*>(.*?)</p>",
+    "date": "(?is)<strong\\b[^>]*>(.*?)</strong>",
+    "time": "(?is)<span\\b[^>]*>(.*?)</span>",
+    "removeStrong": "(?is)<strong\\b[^>]*>.*?</strong>",
+    "removeSpan": "(?is)<span\\b[^>]*>.*?</span>",
+    "paragraph": "(?is)<p\\b[^>]*>(.*?)</p>"
+  },
+  "races": {
+    "listDivMarker": "(?is)<div\\b(?=[^>]*class=[\"'][^\"']*race-list[^\"']*[\"'])[^>]*>",
+    "link": "(?is)<a\\b[^>]*href=[\"']([^\"']+)[\"'][^>]*>(.*?)</a>",
+    "titleStrong": "(?is)<strong\\b[^>]*>(.*?)</strong>",
+    "titleHeading": "(?is)<h[1-6]\\b[^>]*>(.*?)</h[1-6]>",
+    "date": "(?is)<(?:time|span)\\b[^>]*>(.*?)</(?:time|span)>"
+  },
+  "products": {
+    "link": "(?is)<a\\b[^>]*href=[\"'](/tovar/[^\"']+)[\"'][^>]*>(.*?)</a>",
+    "image": "(?is)<img\\b[^>]*src=[\"']([^\"']+)[\"']",
+    "title": "(?is)<strong[^>]*>(.*?)</strong>",
+    "price": "(?is)<span[^>]*>(.*?)</span>"
+  }
+}

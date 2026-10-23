@@ -1,0 +1,32 @@
+# Перевіряє scrape-config.json при кожній зміні: див. розділ «Автоматична перевірка» в README.md.
+name: Перевірка scrape-config.json
+
+on:
+  push:
+    paths:
+      - scrape-config.json
+      - .github/workflows/validate-scrape-config.yml
+      - .github/scripts/ValidateScrapeConfig.java
+  pull_request:
+    paths:
+      - scrape-config.json
+      - .github/workflows/validate-scrape-config.yml
+      - .github/scripts/ValidateScrapeConfig.java
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Перевірити конфіг
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Перевірити scrape-config.json
+        run: java "-Dfile.encoding=UTF-8" .github/scripts/ValidateScrapeConfig.java scrape-config.json

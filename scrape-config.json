@@ -5,7 +5,8 @@
   },
   "article": {
     "articleTag": "(?is)<article\\b[^>]*>(.*?)</article>",
-    "bodyDivMarker": "(?is)<div\\b(?=[^>]*itemprop=[\"']articleBody[\"'])[^>]*>"
+    "bodyDivMarker": "(?is)<div\\b(?=[^>]*itemprop=[\"']articleBody[\"'])[^>]*>",
+    "image": "(?is)<img\\b[^>]*src=[\"']([^\"']+)[\"']"
   },
   "news": {
     "articleLink": "(?is)<a\\s+href=\"/([^\"#?]+)\"[^>]*>(.*?)</a>",
